@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: heliocentric-app
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/denishelena/argocd.git
+    targetRevision: HEAD
+    path: ./argo-files/manifests/app2
+   
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: nginx2
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true  
+    automated:
+      prune: true
+      selfHeal: true
