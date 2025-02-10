@@ -14,7 +14,7 @@ spec:
     path: ./argo-files/manifests/app2
    
   destination:
-    server: https://kubernetes.default.svc
+    server: prd-ti-vtex-eks-use1-4dr
     namespace: nginx2
 
   syncPolicy:
