@@ -14,7 +14,7 @@ spec:
     path: ./argo-files/manifests/app3
    
   destination:
-    server: prd-ti-vtex-eks-use1-4dr
+    server: https://C2ED5CC8019AB1758902710D04CBE0C5.gr7.us-east-1.eks.amazonaws.com
     namespace: nginx3
 
   syncPolicy:
